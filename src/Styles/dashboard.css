@@ -1,0 +1,280 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+}
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #7c3aed;
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1050;
+}
+/* Sidebar hidden by default */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;   /* hidden */
+  width: 250px;
+  height: 100vh;
+ background: rgba(15, 23, 42, 0.95);
+ backdrop-filter: blur(10px);
+ padding: 70px 20px 30px 20px;
+  transition: 0.3s;
+   display: flex;
+  z-index: 1000;
+ flex-direction: column;
+}
+.setting-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.setting-item select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+body.light {
+  background: #f1f5f9;
+  color: black;
+}
+
+body.light .dashboard {
+  background: #f1f5f9;
+  color: black;
+}
+
+body.light .sidebar {
+  background: white;
+}
+.logout-btn {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff4d4d;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.logout-btn:hover {
+  background: rgba(255, 0, 0, 0.2);
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background: #7c3aed;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Sidebar Menu Items */
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #a78bfa;
+}
+
+.logout {
+  color: #ff4d4d;
+}
+.settings-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+  width: 500px;
+}
+
+.setting-item {
+  margin-top: 20px;
+}
+
+.logout:hover {
+  background: rgba(255,0,0,0.1);
+}
+.profile-card {
+  display: flex;
+  gap: 40px;
+  background: linear-gradient(145deg, #1e293b, #111827);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #7c3aed;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.profile-right input,
+.profile-right textarea {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+}
+
+.profile-right button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* Edit Button */
+.profile-right button:first-of-type {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  color: white;
+}
+
+/* Save Button */
+.profile-right button:last-of-type {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+.profile-right button:hover {
+  transform: scale(1.05);
+}
+.hero-section {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+}
+
+.hero-robot {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.save-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+/* When open */
+.sidebar.show {
+  left: 0;
+  padding-top: 70px;
+}
+
+/* Main content */
+.main-section {
+  flex: 1;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+  width: 100%;
+}
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ================= SIDEBAR MENU ================= */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu li {
+  padding: 12px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 Cool Hover */
+.sidebar-menu li:hover {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  transform: translateX(6px);
+}
+
+/* Active Click Effect */
+.sidebar-menu li:active {
+  transform: scale(0.98);
+}
+/* Push content ONLY on desktop */
+@media (min-width: 992px) {
+  .sidebar.show ~ .main-section {
+    margin-left: 250px;
+  }
+}
+
+/* Overlay (mobile only) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 900;
+}
+
+/* Mobile behavior */
+@media (max-width: 991px) {
+  .main-section {
+    padding: 20px;
+  }
+}

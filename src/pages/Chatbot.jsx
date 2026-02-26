@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import "../styles/chat.css";
+import "../Styles/chat.css";
 import TypingDots from "../Components/TypingDots";
 import { sendMessageToServer } from "../api";
 

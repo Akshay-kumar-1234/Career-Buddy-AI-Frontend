@@ -6,11 +6,13 @@ export default function DashboardLayout({ children, user }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
-  const handleLogout = () => {
- localStorage.removeItem("currentUser");
+ const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    setUser(null); // 🔥 IMPORTANT
     navigate("/login", { replace: true });
   };
-
   return (
     <div className="dashboard">
 

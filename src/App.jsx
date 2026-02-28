@@ -70,7 +70,7 @@ export default function App() {
           path="/home"
           element={
             <ProtectedRoute>
-              <DashboardLayout user={user}>
+              <DashboardLayout user={user} setUser={setUser}>
                 <Landing user={user} />
               </DashboardLayout>
             </ProtectedRoute>
@@ -81,7 +81,7 @@ export default function App() {
           path="/profile"
           element={
             <ProtectedRoute>
-              <DashboardLayout user={user}>
+             <DashboardLayout user={user} setUser={setUser}>
                 <Profile user={user} />
               </DashboardLayout>
             </ProtectedRoute>
@@ -92,7 +92,7 @@ export default function App() {
           path="/settings"
           element={
             <ProtectedRoute>
-              <DashboardLayout user={user}>
+              <DashboardLayout user={user} setUser={setUser}>
                 <Settings user={user} />
               </DashboardLayout>
             </ProtectedRoute>

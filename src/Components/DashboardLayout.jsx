@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/dashboard.css";
 
-export default function DashboardLayout({ children, user }) {
+export default function DashboardLayout({ user, setUser, children }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 

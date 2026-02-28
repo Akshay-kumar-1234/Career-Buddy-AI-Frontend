@@ -29,29 +29,44 @@ export default function Login({ setUser }) {
     alert("Server error");
   }
 };
-  return (
-     <div className="auth-container">
-    <div className="auth-card">
-      <h2>Welcome Back</h2>
+return (
+  <div className="auth-wrapper">
+    <div className="auth-left">
+      <h1>Welcome Back</h1>
+      <p>
+        Continue your career journey with AI-powered insights and tools
+        designed to accelerate your success.
+      </p>
 
-      <div className="input-group">
-        <input
-          placeholder=" "
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Email</label>
+      <div className="auth-features">
+        <div>✨ Personalized Career Advice</div>
+        <div>📄 Resume Optimization</div>
+        <div>🤖 AI Career Chat Assistant</div>
+        <div>📈 Growth Roadmap</div>
       </div>
+    </div>
 
-      <button className="auth-btn" onClick={sendOtp}>
-        Login with OTP
-      </button>
+    <div className="auth-right">
+      <div className="auth-card">
+        <h2>Login with OTP</h2>
 
-      <div className="auth-link">
-        New user?{" "}
-        <span onClick={() => navigate("/")}>Create account</span>
+        <div className="input-group">
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <button className="auth-btn" onClick={sendOtp}>
+          Send OTP
+        </button>
+
+        <div className="auth-link">
+          New user?{" "}
+          <span onClick={() => navigate("/")}>Create account</span>
+        </div>
       </div>
     </div>
   </div>
-  );
+);
 }

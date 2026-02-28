@@ -27,25 +27,45 @@ export default function Signup({ setEmail }) {
     }
   };
 
-  return (
-     <div className="auth-container">
-    <div className="auth-card">
-      <h2>Create Account</h2>
-      <div className="input-group">
-        <input placeholder=" " onChange={(e) => setName(e.target.value)} />
-        <label>Name</label>
+return (
+  <div className="auth-wrapper">
+    <div className="auth-left">
+      <h1>Career Buddy AI</h1>
+      <p>
+        Your intelligent career companion. Get AI-powered resume insights,
+        interview preparation, and smart career guidance.
+      </p>
+
+      <div className="auth-features">
+        <div>🚀 AI Resume Analysis</div>
+        <div>💼 Smart Job Matching</div>
+        <div>🎯 Interview Preparation</div>
+        <div>📊 Career Growth Tracking</div>
       </div>
-      <div className="input-group">
-        <input placeholder=" " onChange={(e) => setEmailInput(e.target.value)} />
-        <label>Email</label>
-      </div>
-      <button className="auth-btn" onClick={sendOtp}>
-        Send OTP
-      </button>
-      <div className="auth-link">
-        Already have an account? <span onClick={() => navigate("/login")}>Login</span>
+    </div>
+
+    <div className="auth-right">
+      <div className="auth-card">
+        <h2>Create Account</h2>
+
+        <div className="input-group">
+          <input onChange={(e) => setName(e.target.value)} />
+        </div>
+
+        <div className="input-group">
+          <input onChange={(e) => setEmailInput(e.target.value)} />
+        </div>
+
+        <button className="auth-btn" onClick={sendOtp}>
+          Send OTP
+        </button>
+
+        <div className="auth-link">
+          Already have an account?{" "}
+          <span onClick={() => navigate("/login")}>Login</span>
+        </div>
       </div>
     </div>
   </div>
-  );
+);
 }

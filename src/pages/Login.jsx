@@ -9,7 +9,7 @@ export default function Login({ setUser }) {
 
   const sendOtp = async () => {
   try {
-    const res = await fetch( `${import.meta.env.VITE_API_URL}/api/chat`,{
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/send-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

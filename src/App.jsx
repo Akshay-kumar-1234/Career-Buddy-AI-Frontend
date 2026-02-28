@@ -1,16 +1,20 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+
 import Signup from "./pages/Signup";
 import VerifyOtp from "./pages/VerifyOtp";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing";
 import Chatbot from "./pages/Chatbot";
-import { useState } from "react";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import DashboardLayout from "./Components/DashboardLayout";
-export default function App() {
 
-  const location = useLocation();   // ✅ ADD THIS
+import DashboardLayout from "./Components/DashboardLayout";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+
+export default function App() {
+  const location = useLocation();
 
   const [user, setUser] = useState(() => {
     try {
@@ -31,52 +35,75 @@ export default function App() {
   return (
     <>
       <Routes>
-        {/* PUBLIC ROUTES */}
-        <Route path="/" element={<Signup />} />
-        <Route path="/verify-otp" element={<VerifyOtp setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        {/* PROTECTED ROUTE */}
-       <Route
-  path="/home"
-  element={
-    user ? (
-      <DashboardLayout user={user}>
-        <Landing user={user} />
-      </DashboardLayout>
-    ) : (
-      <Navigate to="/" />
-    )
-  }
-/>
+        {/* ================= PUBLIC ROUTES ================= */}
 
-<Route
-  path="/profile"
-  element={
-    user ? (
-      <DashboardLayout user={user}>
-        <Profile user={user} />
-      </DashboardLayout>
-    ) : (
-      <Navigate to="/" />
-    )
-  }
-/>
+        <Route
+          path="/"
+          element={
+            <PublicRoute>
+              <Signup />
+            </PublicRoute>
+          }
+        />
 
-<Route
-  path="/settings"
-  element={
-    user ? (
-      <DashboardLayout user={user}>
-        <Settings user={user} />
-      </DashboardLayout>
-    ) : (
-      <Navigate to="/" />
-    )
-  }
-/>
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login setUser={setUser} />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/verify-otp"
+          element={
+            <PublicRoute>
+              <VerifyOtp setUser={setUser} />
+            </PublicRoute>
+          }
+        />
+
+        {/* ================= PROTECTED ROUTES ================= */}
+
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout user={user}>
+                <Landing user={user} />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout user={user}>
+                <Profile user={user} />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout user={user}>
+                <Settings user={user} />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
-      {/* ✅ Chatbot only on home */}
+      {/* Chatbot only inside protected home */}
       {user && location.pathname === "/home" && (
         <Chatbot user={user} />
       )}

@@ -8,7 +8,7 @@ export default function DashboardLayout({ children, user }) {
 
   const handleLogout = () => {
  localStorage.removeItem("currentUser");
-    navigate("/login");
+    navigate("/login", { replace: true });
   };
 
   return (

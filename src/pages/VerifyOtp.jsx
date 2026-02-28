@@ -29,7 +29,7 @@ if (data.token && data.user) {
   localStorage.removeItem("otpEmail");
 
   setUser(data.user);
-  navigate("/home");
+navigate("/home", { replace: true });
 
 } else {
   alert(data.message || "Invalid OTP");

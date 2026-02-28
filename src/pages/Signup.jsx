@@ -21,7 +21,7 @@ export default function Signup({ setEmail }) {
       if (!res.ok) throw new Error(data.message);
 
       localStorage.setItem("otpEmail", email); // ✅ add this
-      navigate("/verify-otp");
+  navigate("/verify-otp", { replace: true });
     } catch (err) {
       alert(err.message);
     }

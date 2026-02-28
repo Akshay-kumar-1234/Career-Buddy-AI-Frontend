@@ -20,7 +20,7 @@ export default function Login({ setUser }) {
 
     if (res.ok) {  // ✅ use res.ok instead
       localStorage.setItem("otpEmail", email);
-      navigate("/verify-otp");
+    navigate("/verify-otp", { replace: true });
     } else {
       alert(data.message || "Failed to send OTP");
     }

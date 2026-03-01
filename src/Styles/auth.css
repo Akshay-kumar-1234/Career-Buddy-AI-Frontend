@@ -5,23 +5,54 @@
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-.auth-container {
+.auth-wrapper {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 40px 20px;
+}
+
+/* WELCOME SECTION */
+.auth-hero {
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.auth-hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.auth-hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.auth-features {
+  margin-top: 25px;
+}
+
+.auth-features div {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 /* AUTH CARD */
-/* .auth-card {
-  width: 380px;
-  background: #fff;
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
   border-radius: 16px;
-  padding: 30px;
+  padding: 35px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.6s ease;
-} */
+}
 
 @keyframes slideUp {
   from {
@@ -34,11 +65,11 @@
   }
 }
 
-/* .auth-card h2 {
+.auth-card h2 {
   text-align: center;
   margin-bottom: 25px;
   color: #333;
-} */
+}
 
 /* INPUT GROUP */
 .input-group {
@@ -49,7 +80,7 @@
 .input-group input {
   width: 100%;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #ccc;
   outline: none;
   font-size: 15px;
@@ -58,29 +89,10 @@
 
 .input-group input:focus {
   border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
-.input-group label {
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 14px;
-  pointer-events: none;
-  transition: 0.3s;
-  background: white;
-  padding: 0 6px;
-}
-
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-  top: -6px;
-  font-size: 12px;
-  color: #667eea;
-}
-
-/* BUTTON
+/* BUTTON */
 .auth-btn {
   width: 100%;
   padding: 14px;
@@ -91,7 +103,8 @@
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-} */
+  margin-top: 10px;
+}
 
 .auth-btn:hover {
   transform: translateY(-2px);
@@ -99,115 +112,36 @@
 }
 
 /* LINK */
-/* .auth-link {
+.auth-link {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
-} */
-
-/* .auth-link span {
-  color: #667eea;
-  cursor: pointer;
-  font-weight: 600;
-} */
-/* Full page layout */
-.auth-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* LEFT SIDE (Brand Section) */
-.auth-left {
-  flex: 1;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-}
-
-.auth-left h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.auth-left p {
-  font-size: 18px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.auth-features {
-  margin-top: 40px;
-}
-
-.auth-features div {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-/* RIGHT SIDE (Form Section) */
-.auth-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f9fafb;
-}
-
-/* Card */
-.auth-card {
-  width: 400px;
-  padding: 40px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.auth-card h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.input-group {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-}
-
-.auth-btn {
-  width: 100%;
-  padding: 12px;
-  background: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.auth-btn:hover {
-  background: #4338ca;
-}
-
-.auth-link {
-  margin-top: 15px;
-  text-align: center;
 }
 
 .auth-link span {
-  color: #4f46e5;
+  color: #667eea;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .auth-hero h1 {
+    font-size: 28px;
+  }
+
+  .auth-hero p {
+    font-size: 14px;
+  }
+
+  .auth-features div {
+    font-size: 14px;
+  }
+
+  .auth-card {
+    padding: 25px;
+  }
 }

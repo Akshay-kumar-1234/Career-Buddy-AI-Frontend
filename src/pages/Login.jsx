@@ -31,40 +31,38 @@ export default function Login({ setUser }) {
 };
 return (
   <div className="auth-wrapper">
-    <div className="auth-left">
-      <h1>Welcome Back</h1>
+    <div className="auth-hero">
+      <h1>Welcome Back to Career Buddy AI</h1>
       <p>
-        Continue your career journey with AI-powered insights and tools
-        designed to accelerate your success.
+        Continue your career journey with AI-powered resume analysis,
+        smart job matching and interview preparation.
       </p>
 
       <div className="auth-features">
         <div>✨ Personalized Career Advice</div>
         <div>📄 Resume Optimization</div>
-        <div>🤖 AI Career Chat Assistant</div>
-        <div>📈 Growth Roadmap</div>
+        <div>🤖 AI Career Assistant</div>
       </div>
     </div>
 
-    <div className="auth-right">
-      <div className="auth-card">
-        <h2>Login with OTP</h2>
+    <div className="auth-card">
+      <h2>Login with OTP</h2>
 
-        <div className="input-group">
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+      <div className="input-group">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
 
-        <button className="auth-btn" onClick={sendOtp}>
-          Send OTP
-        </button>
+      <button className="auth-btn" onClick={sendOtp}>
+        Send OTP
+      </button>
 
-        <div className="auth-link">
-          New user?{" "}
-          <span onClick={() => navigate("/")}>Create account</span>
-        </div>
+      <div className="auth-link">
+        New user? <span onClick={() => navigate("/")}>Create account</span>
       </div>
     </div>
   </div>

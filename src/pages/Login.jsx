@@ -34,13 +34,13 @@ return (
     <div className="auth-hero">
       <h1>Welcome Back to Career Buddy AI</h1>
       <p>
-        Continue your career journey with AI-powered resume analysis,
-        smart job matching and interview preparation.
+        Continue your career journey with AI-powered Career Buddy Adviser ,
+        analysis the things according to the student.
       </p>
 
       <div className="auth-features">
         <div>✨ Personalized Career Advice</div>
-        <div>📄 Resume Optimization</div>
+        <div>📄 Study Material</div>
         <div>🤖 AI Career Assistant</div>
       </div>
     </div>

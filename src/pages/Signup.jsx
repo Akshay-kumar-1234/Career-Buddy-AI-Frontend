@@ -32,14 +32,14 @@ return (
     <div className="auth-hero">
       <h1>Join Career Buddy AI</h1>
       <p>
-        Get AI-powered resume insights, job recommendations
+        Get AI-powered helpfull tool, job recommendations
         and career growth tools — all in one place.
       </p>
 
       <div className="auth-features">
-        <div>🚀 AI Resume Analysis</div>
+        <div>🚀 AI Study Analysis</div>
         <div>💼 Smart Job Matching</div>
-        <div>🎯 Interview Preparation</div>
+        <div>🎯 Career Related Question</div>
       </div>
     </div>
 

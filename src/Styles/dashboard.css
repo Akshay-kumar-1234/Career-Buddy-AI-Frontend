@@ -94,13 +94,13 @@ body.light .sidebar {
 .logout {
   color: #ff4d4d;
 }
-.settings-card {
+/* .settings-card {
   background: #1e293b;
   padding: 30px;
   border-radius: 15px;
   color: white;
   width: 500px;
-}
+} */
 
 .setting-item {
   margin-top: 20px;
@@ -109,7 +109,7 @@ body.light .sidebar {
 .logout:hover {
   background: rgba(255,0,0,0.1);
 }
-.profile-card {
+/* .profile-card {
   display: flex;
   gap: 40px;
   background: linear-gradient(145deg, #1e293b, #111827);
@@ -119,14 +119,14 @@ body.light .sidebar {
   max-width: 900px;
   margin: auto;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
+} */
 
-.profile-image {
+/* .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-}
+} */
 
 .upload-btn {
   display: inline-block;
@@ -136,7 +136,7 @@ body.light .sidebar {
   border-radius: 8px;
   cursor: pointer;
 }
-.profile-right input,
+/* .profile-right input,
 .profile-right textarea {
   width: 100%;
   margin-top: 15px;
@@ -145,9 +145,9 @@ body.light .sidebar {
   border: 1px solid #334155;
   background: #0f172a;
   color: white;
-}
+} */
 
-.profile-right button {
+/* .profile-right button {
   margin-top: 20px;
   padding: 12px 25px;
   border: none;
@@ -155,7 +155,7 @@ body.light .sidebar {
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s ease;
-}
+} */
 
 /* Edit Button */
 .profile-right button:first-of-type {
@@ -276,5 +276,102 @@ body.light .sidebar {
 @media (max-width: 991px) {
   .main-section {
     padding: 20px;
+  }
+}
+.profile-card {
+  display: flex;
+  gap: 40px;
+  background: #111827;
+  padding: 30px;
+  border-radius: 16px;
+  flex-wrap: wrap;
+}
+
+.profile-left {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-right {
+  flex: 2;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-right input,
+.profile-right textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: white;
+}
+
+.profile-right textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.profile-right button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+}
+
+/* 📱 Mobile Fix */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .profile-right {
+    width: 100%;
+  }
+}
+.settings-card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.setting-item {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.setting-item select {
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* 📱 Mobile Fix */
+@media (max-width: 768px) {
+  .settings-card {
+    padding: 20px;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

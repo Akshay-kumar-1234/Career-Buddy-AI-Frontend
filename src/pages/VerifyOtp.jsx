@@ -40,22 +40,45 @@ navigate("/home", { replace: true });
     }
   };
 
-  return (
-     <div className="auth-container">
+return (
+  <div className="auth-wrapper">
+    <div className="auth-hero">
+      <h1>Verify Your Email</h1>
+      <p>
+        We have sent a 6-digit OTP to your registered email address.
+        Enter it below to continue.
+      </p>
+
+      <div className="auth-features">
+        <div>🔐 Secure Authentication</div>
+        <div>⚡ Fast Verification</div>
+        <div>🤖 AI Career Access</div>
+      </div>
+    </div>
+
     <div className="auth-card">
       <h2>Enter OTP</h2>
+
       <div className="input-group">
         <input
-          placeholder=" "
+          type="text"
+          placeholder="Enter 6-digit OTP"
           value={otp}
           onChange={(e) => setOtp(e.target.value)}
         />
-        <label>OTP</label>
       </div>
+
       <button className="auth-btn" onClick={verifyOtp}>
         Verify OTP
       </button>
+
+      <div className="auth-link">
+        Wrong email?{" "}
+        <span onClick={() => navigate("/login")}>
+          Go Back
+        </span>
+      </div>
     </div>
   </div>
-  );
+);
 }
